@@ -1,12 +1,19 @@
-﻿<Window x:Class="EnchancedFileExplorer.MainWindow"
+﻿<Window x:Class="EnchancedFileExplorer.MVVM.View.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:EnchancedFileExplorer"
+        xmlns:local="clr-namespace:EnchancedFileExplorer.MVVM.View"
+        xmlns:vm="clr-namespace:EnchancedFileExplorer.MVVM.ViewModel"
         mc:Ignorable="d"
+        WindowStartupLocation="CenterScreen"
         Title="MainWindow" Height="450" Width="800">
-    <Grid>
 
+    <Window.DataContext>
+        <vm:VM_MainWindow/>
+    </Window.DataContext>
+    
+    <Grid>
+        
     </Grid>
 </Window>
