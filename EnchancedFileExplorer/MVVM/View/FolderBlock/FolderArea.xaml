@@ -1,0 +1,41 @@
+﻿<UserControl x:Class="EnchancedFileExplorer.MVVM.View.FolderBlock.FolderArea"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:EnchancedFileExplorer.MVVM.View.FolderBlock"
+             xmlns:folderV="clr-namespace:EnchancedFileExplorer.MVVM.View.FolderBlock"
+             xmlns:vm="clr-namespace:EnchancedFileExplorer.MVVM.ViewModel"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+
+    <UserControl.DataContext>
+        <vm:VM_FolderArea/>
+    </UserControl.DataContext>
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="22"/>
+            <RowDefinition Height="*"/> 
+        </Grid.RowDefinitions>
+        <Border 
+            Height="20"
+            Grid.Row="0"
+            BorderThickness="1" BorderBrush="Gray">
+            <TextBox
+                Text="{Binding AdressBarText, UpdateSourceTrigger=PropertyChanged}"
+                Background="Transparent"
+                />
+        </Border>
+
+        <Grid Grid.Row="1">
+            <ItemsControl ItemsSource="{Binding ContentItems}">
+                <ItemsControl.ItemTemplate>
+                    <DataTemplate>
+                        <folderV:FolderContentItem/>
+                    </DataTemplate>
+                </ItemsControl.ItemTemplate>
+            </ItemsControl>
+        </Grid>
+    </Grid>
+</UserControl>
